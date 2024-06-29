@@ -17,7 +17,7 @@ public class DemoJdbc {
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			
 		// Step 2 Get JDBC connection 
-		 con=	DriverManager.getConnection("jdbc:mysql://localhost:3306/161batch", "root", "Sumit@123");
+		 con=	DriverManager.getConnection("jdbc:mysql://localhost:3306/161batch", "root", "root");
 			
 		// Step 3 Create JDBC statement
 			
