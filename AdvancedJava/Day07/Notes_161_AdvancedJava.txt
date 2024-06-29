@@ -13,7 +13,7 @@ Today's Lecture Agenda
 		 e.g All core java Application which are running from Command prompt is a CUI Based
 		Also Called Console Application
 
-		Web Application
+		3 Web Application
 		e.g www.google.com
 		java enterprise application- Bank Application,Telecom Application
 		means it support atm,smart device, It is combination of all things(Multiple services) like Bank Application
