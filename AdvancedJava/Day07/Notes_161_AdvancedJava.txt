@@ -19,7 +19,7 @@ Today's Lecture Agenda
 		means it support atm,smart device, It is combination of all things(Multiple services) like Bank Application
 2 Server
 	1 H/w Server- physical Machine(It has one or more S/W server run with differentiate using port)
-2 S/W Server
+  2 S/W Server
     - Web Server- IIS (Microsoft),Glassfish (sun Microsystem),Tomcat server(Apache), Jetty
 			
     - Application Server- mysql, Angular server,Oracle server weblogic,Jboss (Red Hat),IBM WebSphere
