@@ -2,7 +2,6 @@
 
 Youtube Channel https://www.youtube.com/c/SumitNiche
 
-linkedin.com/in/ sumit-raokhande-09aaba21
 
 github.com/ sumitrao007
 
