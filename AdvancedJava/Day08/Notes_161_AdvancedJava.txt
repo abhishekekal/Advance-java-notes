@@ -100,7 +100,7 @@ Today's Lecture Agenda
 2 Servlet Life Cycle?
 	1 init => only once it is invoked 
 	2 service => doget => It invokes many more time 
-	3 destroy => it invoked on;ly once 
+	3 destroy => it invoked only once 
 	
 3 How to get Data from parameter?
 4 How to create servlet project?
