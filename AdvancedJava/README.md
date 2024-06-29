@@ -3,9 +3,7 @@
 Youtube Channel https://www.youtube.com/c/SumitNiche
 
 
-github.com/ sumitrao007
 
-sumitrao007.github.io
 
 See The Spring Boot Series https://www.youtube.com/watch?v=1cecOdE2ZN8&list=PLa3i9wpSPojGRBeYmmhVkl76bmqih4vGm
 
