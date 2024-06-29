@@ -97,7 +97,7 @@ MySQL Driver Connection -:
 String DB_DRIVER = "com.mysql.cj.jdbc.Driver";
 String DB_URL = "jdbc:mysql://localhost:3306/emp161db";
 String DB_USER = "root";
-String DB_PASSWORD = "Sumit@123";
+String DB_PASSWORD = "root";
 
 Oracle Driver Connection -:
 String DB_DRIVER = "oracle.jdbc.OracleDriver";
