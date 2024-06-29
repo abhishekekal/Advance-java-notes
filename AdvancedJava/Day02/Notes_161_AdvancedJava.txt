@@ -27,7 +27,8 @@ Today's Lecture Agenda
 
 What is Database Driver?
 Database driver
-	- A software that enables java application to interact with database. It is simple carrier to connect your java application to data base. Where driver is act like bridge between any application to db that store the data into database.Here 4 different Types of driver 
+	- A software that enables java application to interact with database. It is simple carrier to connect your java application to data base.
+	Where driver is act like bridge between any application to db that store the data into database.Here 4 different Types of driver 
 
 	1 Type I --- Jdbc Odbc Bridge Driver
 			JDBC -> java database connectivity (Design by sunmicrosystem)
