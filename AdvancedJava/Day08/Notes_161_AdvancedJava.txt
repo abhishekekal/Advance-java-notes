@@ -103,7 +103,35 @@ Today's Lecture Agenda
 	3 destroy => it invoked only once 
 	
 3 How to get Data from parameter?
+
+. Using GET requests with query strings:
+
+In this method, the data is appended to the URL of the request as a query string. The format is typically like this:
+
+http://yourserver.com/your_servlet?param1=value1&param2=value2
+Within your servlet, you can access the parameter values using the getParameter() method of the HttpServletRequest object
+
+public class MyServlet extends HttpServlet {
+
+  @Override
+  protected void doGet(HttpServletRequest request, HttpServletResponse response)
+      throws ServletException, IOException {
+    String param1Value = request.getParameter("param1");
+    String param2Value = request.getParameter("param2");
+    
+    // Process the parameter values here
+    
+    // ...
+  }
+}
+
 4 How to create servlet project?
+Step 1: Create a Dynamic web project
+Step 2: servlet-api.jar file 
+Step 3: Create Servlet Class
+Step 4: Implement the Logic
+
+
 
 
 summary & Interview Questions
