@@ -10,7 +10,8 @@ Today's Lecture Agenda
 1 Send Response of Html format
 2 Servlet collabration
 
-- Call from one servlet to another servlet is called servlet collabration. We can add another HTML file (i.e. call from one servlet to another html file). To perform servlet collabration task we have to required an object of request Dispatcher. Request disppachter object we can obtained from HttpServletRequest 
+- Call from one servlet to another servlet is called servlet collabration. We can add another HTML file (i.e. call from one servlet to another html file).
+To perform servlet collabration task we have to required an object of request Dispatcher. Request disppachter object we can obtained from HttpServletRequest 
 
 3 Request Dispatcher
 
