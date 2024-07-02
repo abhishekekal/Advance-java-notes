@@ -12,7 +12,7 @@ JSP (Java Server Page)
 	- JSP only Support 3 methods
 		1 GET 2 POST 3 HEAD
 	- JSP = Presentation Logic* + Business Logic
-	- JSP is front-end technology i.e. web ui.
+	
 * JSP is converted into the servlet during execution.
 	- JSP page -- .jsp
 	- It Contain HTML tags + JSP tags + Custom tags + Java code
