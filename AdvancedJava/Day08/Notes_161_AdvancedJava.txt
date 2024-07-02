@@ -101,6 +101,66 @@ Today's Lecture Agenda
 	1 init => only once it is invoked 
 	2 service => doget => It invokes many more time 
 	3 destroy => it invoked only once 
+ 1 . init() method: The Servlet.init() method is called by the Servlet container to indicate that this Servlet instance is instantiated successfully and is about to put into service.
+//init() method
+
+public class MyServlet implements Servlet{
+   public void init(ServletConfig config) throws ServletException {
+        //initialization code
+   }
+    //rest of code
+}
+service() method: The service() method of the Servlet is invoked to inform the Servlet about the client requests.
+This method uses ServletRequest object to collect the data requested by the client.
+This method uses ServletResponse object to generate the output content.
+// service() method
+
+public class MyServlet implements Servlet{
+    public void service(ServletRequest res, ServletResponse res)
+    throws ServletException, IOException {
+            // request handling code
+    }
+    // rest of code
+}
+destroy() method: The destroy() method runs only once during the lifetime of a Servlet and signals the end of the Servlet instance.
+//destroy() method
+
+public void destroy()
+As soon as the destroy() method is activated, the Servlet container releases the Servlet instance.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 	
 3 How to get Data from parameter?
 
