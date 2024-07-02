@@ -1,6 +1,6 @@
 Last Lecture Agenda
 1 Modular Approach
-2 Implementation of Dao
+2 Implementation of Dao : The Dao class content  the all the connection between the database ;
 Class Employee{
 	int id;
 	String fname;
