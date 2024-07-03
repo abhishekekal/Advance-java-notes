@@ -1,1 +1,359 @@
+one to one mapping
+
+
+undireaction  and bydirection
+
+one question having only one answere that is o2o releation
+
+
+
+//undireaction 
+
+
+one class
+
+@Entity
+public class question {
+@Id
+private  int q_id; // pk 
+private String Q;
+@OneToOne  // annotation use to mapping the one 2one
+private Answer  ans; // this is the class  
+
+
+// add setter getter
+//add constructer
+// add parameter constructer
+// to string method
+}
+
+
+2nd class
+
+@Entity
+public class Answer {
+	@Id
+	private int ans_id; // pk whene we mapping it that pk acetate as the fk into the question table
+	
+	private String ans;
+
+
+// add setter getter
+//add constructer
+// add parameter constructer
+// to string method
+}
+
+
+main
+{
+
+	Configuration cfg= new Configuration().addAnnotatedClass(question.class).addAnnotatedClass(Answer.class).configure();
+	SessionFactory ss=cfg.buildSessionFactory();
+	Session s= ss.openSession();
+	Transaction t= s.beginTransaction();
+	
+	question q1=new question(); // object of question  class
+	q1.setQ_id(101);
+	q1.setQ(" what is java "); // stored the data
+	
+	
+	Answer a=new Answer();// object of answer  class
+	a.setAns_id(135);
+	a.setAns("it is programming langunage"); // stored the data
+ 
+	q1.setAns(a); // set the answer  into the qution table variable ans
+	
+	s.save(q1); // save the  data 
+	s.save(a);
+	
+	t.commit(); // permanent 
+	
+	s.close();
+ ss.close();
+ System.out.println("done");
+
+}
+
+--------------------------------------------------------------------
+one to one mapping
+
+
+undireaction  and bydirection
+
+one question having only one answere that is o2o releation
+
+
+one class
+
+@Entity
+public class question {
+@Id
+private  int q_id; // pk 
+private String Q;
+@OneToOne  // annotation use to mapping the one 2one
+private Answer  ans; // this is the class  
+
+
+// add setter getter
+//add constructer
+// add parameter constructer
+// to string method
+}
+
+
+2nd class
+
+@Entity
+public class Answer {
+	@Id
+	private int ans_id; // pk whene we mapping it that pk acetate as the fk into the question table
+	
+	private String ans;
+
+
+// add setter getter
+//add constructer
+// add parameter constructer
+// to string method
+}
+
+
+main
+{
+
+	Configuration cfg= new Configuration().addAnnotatedClass(question.class).addAnnotatedClass(Answer.class).configure();
+	SessionFactory ss=cfg.buildSessionFactory();
+	Session s= ss.openSession();
+	Transaction t= s.beginTransaction();
+	
+	question q1=new question(); // object of question  class
+	q1.setQ_id(101);
+	q1.setQ(" what is java "); // stored the data
+	
+	
+	Answer a=new Answer();// object of answer  class
+	a.setAns_id(135);
+	a.setAns("it is programming langunage"); // stored the data
+ 
+	q1.setAns(a); // set the answer  into the qution table variable ans
+	
+	s.save(q1); // save the  data 
+	s.save(a);
+	
+	t.commit(); // permanent 
+	
+	s.close();
+ ss.close();
+ System.out.println("done");
+
+}
+
+-------------------------------------------------------------------------------------
+one 2many mapping
+
+
+one employee  have many accounts
+package one2many;
+
+import java.util.List;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+
+@Entity
+public class employe {
+@Id
+private int emp_id;
+private String name;
+@OneToMany
+private List<account> acc ;
+public employe() {
+	super();
+	// TODO Auto-generated constructor stub
+}
+public int getEmp_id() {
+	return emp_id;
+}
+public void setEmp_id(int emp_id) {
+	this.emp_id = emp_id;
+}
+public String getName() {
+	return name;
+}
+public void setName(String name) {
+	this.name = name;
+}
+public List<account> getAcc() {
+	return acc;
+}
+public void setAcc(List<account> acc) {
+	this.acc = acc;
+}
+public employe(int emp_id, String name, List<account> acc) {
+	super();
+	this.emp_id = emp_id;
+	this.name = name;
+	this.acc = acc;
+}
+@Override
+public String toString() {
+	return "employe [emp_id=" + emp_id + ", name=" + name + ", acc=" + acc + ", getEmp_id()=" + getEmp_id()
+			+ ", getName()=" + getName() + ", getAcc()=" + getAcc() + ", getClass()=" + getClass() + ", hashCode()="
+			+ hashCode() + ", toString()=" + super.toString() + "]";
+}
+
+}
+
+
+////
+
+
+package one2many;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+
+
+
+@Entity
+public class account {
+
+@Id
+private int acc_id;
+private String acc_name;
+private employe emp;
+
+
+
+
+public account() {
+	super();
+	// TODO Auto-generated constructor stub
+}
+
+
+
+
+public account(int acc_id, String acc_name, employe emp) {
+	super();
+	this.acc_id = acc_id;
+	this.acc_name = acc_name;
+	this.emp = emp;
+}
+
+
+
+
+public int getAcc_id() {
+	return acc_id;
+}
+
+
+
+
+public void setAcc_id(int acc_id) {
+	this.acc_id = acc_id;
+}
+
+
+
+
+public String getAcc_name() {
+	return acc_name;
+}
+
+
+
+
+public void setAcc_name(String acc_name) {
+	this.acc_name = acc_name;
+}
+
+
+
+
+public employe getEmp() {
+	return emp;
+}
+
+
+
+
+public void setEmp(employe emp) {
+	this.emp = emp;
+}
+
+
+
+
+@Override
+public String toString() {
+	return "account [acc_id=" + acc_id + ", acc_name=" + acc_name + ", emp=" + emp + ", getAcc_id()=" + getAcc_id()
+			+ ", getAcc_name()=" + getAcc_name() + ", getEmp()=" + getEmp() + ", getClass()=" + getClass()
+			+ ", hashCode()=" + hashCode() + ", toString()=" + super.toString() + "]";
+}
+
+}
+
+///
+
+package one2many;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.cfg.Configuration;
+
+public class test {
+public static void main(String[] args) {
+	 Configuration cfg=new Configuration().addAnnotatedClass(employe.class).addAnnotatedClass(account.class).configure();
+	 SessionFactory ss=cfg.buildSessionFactory();
+	 Session s=ss.openSession();
+	 Transaction t=s.beginTransaction();
+	 employe e=new employe();
+	 e.setEmp_id(121);
+	 e.setName("ram");
+	 
+	 account a=new account();
+	 a.setAcc_id(52);
+	 a.setAcc_name("icic");
+	 a.setEmp(e);
+	 account a1=new account();
+	 a1.setAcc_id(53);
+	 a1.setAcc_name("kkkk");
+	 a1.setEmp(e);
+	 
+	 List<account> list=new  ArrayList<>();
+	 list.add(a);
+	 list.add(a1);
+	 
+	 
+	 e.setAcc(list);
+	 
+s.save(e);
+s.save(a);
+s.save(a1);
+
+
+
+
+	
+	 
+	 t.commit();
+	
+	 s.close();
+	 ss.close();
+	 System.out.println( "done");
+	 
+}
+}
+
+
+
 
