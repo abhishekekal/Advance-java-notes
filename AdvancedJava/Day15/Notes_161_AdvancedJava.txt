@@ -63,6 +63,121 @@ summary & Interview Questions
 2 How to delete a record in hibernate
 3 How to GetParticular record in hibernate
 
+insert recoder into hibernate
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		Configuration config=new Configuration();
+		config.configure("hibernate.cfg.xml");
+		config.addAnnotatedClass(Song.class);		
+		
+		SessionFactory factory=config.buildSessionFactory();
+		
+		Session session= factory.openSession();
+		
+		Song s=new Song();// class obj
+		s.setName("Abc hoo la ho lla ");
+		s.setArtist("Kiran Raokhande");
+		
+		session.beginTransaction();
+		session.persist(s);
+		session.getTransaction().commit();
+		
+		session.close();
+		
+	}
+
+
+update recoder :- 
+
+
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		Configuration config=new Configuration();
+		config.configure("hibernate.cfg.xml");
+		config.addAnnotatedClass(Song.class);
+		
+	  SessionFactory factory=config.buildSessionFactory();
+	  	Session session= factory.openSession();	  
+	  	// data coming from FrontEnd
+	  	int id=1;
+	  	String artistname="R D burban";
+	  	
+	  	session.beginTransaction();
+	  	
+	  	// Get particular Record By Id From Database 
+	  	 Song s= (Song) session.get(Song.class, id); // get the record for this id into the database
+	  	 //	  	 System.out.println(s);
+	  	
+	  	 s.setArtist(artistname); // set the value of this id which is the geting into the database
+	  	// session.update(s);
+	  	 
+	  	 session.merge(s);	  	 
+	  	 
+	  	 session.getTransaction().commit();
+	  	
+	  	 System.out.println("Rcord is Updatated....");
+	  
+
+Fetch the record:- 
+
+
+public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		Configuration config=new Configuration();
+		config.configure("hibernate.cfg.xml");
+		config.addAnnotatedClass(Song.class);		
+		
+		SessionFactory factory=config.buildSessionFactory();
+		
+		Session session= factory.openSession();
+		
+		CriteriaBuilder cb= session.getCriteriaBuilder();
+		
+		CriteriaQuery<Song> cq= cb.createQuery(Song.class);
+		
+		
+		Root<Song> root= cq.from(Song.class);
+		cq.select(root);
+		
+		Query query= session.createQuery(cq);
+		List<Song> list= query.getResultList();
+		
+		for (Song song : list) {
+			System.out.println(song);	
+		}
+
+
+delete record:-
+
+public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+
+		Configuration config=new Configuration();
+		config.configure("hibernate.cfg.xml");
+		config.addAnnotatedClass(Song.class);		
+		
+		int id=3;
+		SessionFactory factory=config.buildSessionFactory();
+		
+		Session session= factory.openSession();
+		
+		session.beginTransaction();
+		
+		 Song s= (Song) session.get(Song.class, id);
+		 
+//		 session.delete(s);
+		 session.remove(s);
+		 
+		 session.getTransaction().commit();
+		  	
+	  	 System.out.println("Rcord is Deleted....");
+		
 
 
 
