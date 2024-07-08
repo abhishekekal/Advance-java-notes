@@ -130,37 +130,6 @@ As soon as the destroy() method is activated, the Servlet container releases the
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 	
 3 How to get Data from parameter?
 
