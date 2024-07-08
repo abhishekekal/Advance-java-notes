@@ -105,25 +105,6 @@ Spring boot :-
 	5. pom.xml file internally handles the required dependencies.
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 2 Why we use Spring?
 3 What is IOC => Inversion of Control?
 What is IoC?
