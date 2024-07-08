@@ -81,6 +81,49 @@ Spring Framework:
 		- Maintainable/Extendable -- Start with interfaces & can change impl over the time.
 		- Exceptions -- Spring convert/wraps all checked exception into unchecked one.
 		- Depedency Injection
+
+
+
+spring :- 
+
+	1. is a open source lightweigth framework widely used to develop enterprise  application
+	2. imp feature is the dependency injection
+
+	3. to run the spring application we need to set the server explicity
+	4.To create a Spring application, the developers write lots of code.
+	5.Developers have to define dependencies manually in the pom.xml file.
+
+Spring boot :- 
+
+	1 Spring Boot is built on top of the conventional spring framework, widely used to develop REST APIs
+
+	2. The most important feature of the Spring Boot is Autoconfiguration
+
+	3.Spring Boot provides embedded servers such as Tomcat and Jetty
+
+	4.  It reduces the lines of code.
+	5. pom.xml file internally handles the required dependencies.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 2 Why we use Spring?
 3 What is IOC => Inversion of Control?
 What is IoC?
