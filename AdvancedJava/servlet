@@ -104,8 +104,8 @@ This interface can also be used to include the content of another resource also.
 
 for the calling the servlet used 2 method 
 
-1 request dispatch
-2 redirect
+1 request dispatch :- 
+2 redirect    can do with the help of cookies
 
 request dispatch;- 
  for the calling the request  dispatch 
@@ -115,7 +115,7 @@ rd.forward( req,res );
 
 
 the one servlet to the another servlet send the data is called the 
-session management
+session management  
 
 
 It is Interface 
