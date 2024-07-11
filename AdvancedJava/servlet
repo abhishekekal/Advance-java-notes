@@ -102,6 +102,22 @@ Request disppachter object we can obtained from HttpServletRequest
 The RequestDispatcher interface provides the facility of dispatching the request to another resource it may be html, servlet or jsp.
 This interface can also be used to include the content of another resource also. It is one of the way of servlet collaboration.
 
+for the calling the servlet used 2 method 
+
+1 request dispatch
+2 redirect
+
+request dispatch;- 
+ for the calling the request  dispatch 
+ create the bject of this request dispatch
+like RequestDispatcher rd=req.getRequestDispatcher("sq");
+rd.forward( req,res );
+
+
+the one servlet to the another servlet send the data is called the 
+session management
+
+
 It is Interface 
 
 - It has 2 methods 
@@ -116,5 +132,30 @@ response.sendRedirect("url");
 4 Forward
 5 include
 6 Session Management 
+
+
+
+httpServletRequest and HttpServletResponse 
+
+
+
+httpServletRequest :-  it is the interface
+
+	-> conseder this 2,3 are the two values  client  can send this values to the server
+	-> request is the object that can hold this values
+	-> 
 	
+
+
+HttpServletResponse:-  it is also the interface
+
+	->  servlet can send the response  to the client  with the help of httpservletResponse object
+	-> all the format  data can send it ( text , html , video)
+
+
+
+
+
+
+
 
