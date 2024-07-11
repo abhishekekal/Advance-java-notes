@@ -1,1 +1,24 @@
-hh
+in web application two types of responese
+
+1 static responses :-
+            -> if we generate any response from server with out performing any action or with out executing any resource  at server machine then thet response  is called as static responses
+
+            EX:- if we submit reques to server for an html file then server will send the content of the 
+                  respective html file as response  to the respective  client  with out executing any resource or with out performing anu action at server machine
+
+2 dynamic responses
+        -> if we generate any response from server by executing a particular resource at server machging and by performing
+          any action at server machine then that response  is called bynamic response.
+
+
+buitin object 
+
+Request(httpServletRequest)
+response (httpservletResponse)
+pagecontext ( pagecontext)
+out printWriter
+Session (httpSession)
+Application(Servlet Context)
+
+
+
