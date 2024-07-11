@@ -166,11 +166,38 @@ HttpServletResponse:-  it is also the interface
 
 
 
-servletConfig 
-Servlet Context 
+servletConfig :-
+
+	-> this is the interface 
+	-> this object can be used to get configuration  information  from the web.xml file
+	-> object is one per servlet class
+	-> object will be created during initialization prosess of servlet 
+	-> object is public to a particular servlet only 
+	-> specify param-value pairs for servletConfig object in <init-param> tag into the web.xml fil
+
+	
 
 
 
+
+Servlet Context :- 
+
+	-> this is also the interface 
+	-> this object is global to entire web application
+	-> object of servletcontext will create the web application deployment
+	-> object is public to all servlet and jsp is a web application
+	->specify param-value pairs for servletContext object is <context- param> tags in web.xml file
+
+ 
+
+
+with the help of the webServlet("/add") annotation use into the class file to configer the web.xml file 
+
+
+why jsp imp
+how jsp translated into servlets  ?
+->   do not run the jsp  directly appache tomcat is the contener that can run the sevlet pages 
+->   jsp   can convert into the servlet  itself
 
 
 
