@@ -66,3 +66,21 @@ Step 3: Create Servlet Class
 Step 4: Implement the Logic
 
 
+do get vs do post method 
+
+
+doget :- 
+	-> only the limited amount of data can send it  because data is send in heder 
+
+	-> not secured because data is show into the url
+	-> get can be the bookmarked it 
+	-> get request is idempotent. it means second request  will be ignored  until response of first request  delivered
+
+do post:-
+
+	-> in case of post large amount of data can be send because  data is sent in body 
+	-> post request is secured because data is not exposed in url 
+	-> post request can not bookmark it
+	-> post method not idempotent
+	
+
