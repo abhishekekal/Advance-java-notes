@@ -104,8 +104,19 @@ This interface can also be used to include the content of another resource also.
 
 for the calling the servlet used 2 method 
 
-1 request dispatch :- 
+1 request dispatch :-
+		->  forwers the reques withen the same application
+		-> do not change the url into the browser
+		-> can use the foward and include method 
+		-> request.getRequestDispatcher("/servlet2").forword(request, response);
+
 2 redirect    can do with the help of cookies
+
+	-> Redirects a request  to a different or url
+	-> changes the url in the browser
+	-> uses the sendRediraction method on the HttpServletResponse object 
+	-> used for external request rediraction
+
 
 request dispatch;- 
  for the calling the request  dispatch 
@@ -151,6 +162,12 @@ HttpServletResponse:-  it is also the interface
 
 	->  servlet can send the response  to the client  with the help of httpservletResponse object
 	-> all the format  data can send it ( text , html , video)
+
+
+
+
+servletConfig 
+Servlet Context 
 
 
 
