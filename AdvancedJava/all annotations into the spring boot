@@ -168,5 +168,8 @@ private Double valueDouble;
 private Boolean valueBoolean;
 
 
+10. @Scope :- 
 
+	configures the scope of bean ( singleton , prototype )
+	
 
