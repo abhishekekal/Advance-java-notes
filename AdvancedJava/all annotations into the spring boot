@@ -88,7 +88,85 @@ System.out.println("Data saved");
 	As a result, developers can create highly flexible and efficient applications that can adapt to requirement changes quickly. 
 	@Configuration annotation supports importing other classes. The Spring Boot custom annotation can separate configuration classes based on domain or functionality.
 
-	
+
+@Configuration 
+public class AppConfig { 
+@Bean 
+public MyBean myBean() { 
+return new MyBean(); 
+} 
+} 
+
+6. @bean :- indicates that a method produces a bean to be managed by the Spring container
+
+	The @Bean is a method-level annotation widely used in Spring Boot applications. 
+	Bean annotation is a direct analog of the XML element, which indicates that the Spring container should register a method.
+	Spring bean annotations are the objects that can be injected into other components or other beans. 
+	Also, it can be an alternative to the XML tag. @Bean annotations are singletons, meaning they can be created or shared with the entire application context.
+
+@Configuration 
+public class AppConfig { 
+@Bean 
+public MyBean myBean() { 
+return new MyBean(); 
+} 
+} 
+
+7. @Autowired :-  used for automatic dependency injection
+
+In SpringBoot annotation, @Autowired is used to inject the dependency of one bean into another.
+The spring-managed object is implemented into another object that a class needs to perform.
+
+Thus, when you annotate a field, a method with @Autowired, Spring Boot will inject the dependency automatically and find the bean that matches that field or parameter.
+The @Autowired is used to inject in three ways: field, setter, and constructor injection.
+
+@Component 
+public class MyComponent { 
+@Autowired 
+private MyService myService; 
+public void useService() { 
+myService.performService(); 
+} 
+} 
+
+
+8.@qualifier:-  Specifies which bean should be injected when multiple 
+candidates are present.
+	 annotation to clearly indicate the bean name and tell spring which dependency should be called for when more than one bean satisfies the conditions for the dependency.
+
+
+@Component 
+public class MyComponent { 
+@Autowired 
+@Qualifier("specificService") 
+private MyService myService; 
+public void useService() { 
+myService.performService(); 
+} 
+} 
+
+9. @value :- injecting  the external value  into application field method parameter 
+		application.properties  file 
+
+		app.example.integer-value=9876
+               app.example.decimal-value=1.75
+              app.example.boolean-value=true
+		
+
+
+
+into the spring application
+
+
+@Value("${app.example.integer-value}")
+private Integer valueInteger;
+
+@Value("${app.example.decimal-value}")
+private Double valueDouble;
+
+@Value("${app.example.boolean-value}")
+private Boolean valueBoolean;
+
 
 
 
