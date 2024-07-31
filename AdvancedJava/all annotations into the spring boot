@@ -63,7 +63,16 @@ and create the one class gives the @service annotation  and use that with the cr
 
 
 		
+4 @Repository:- it marks a java class as a data access object 	
+		its provided  role and purposes
+		it can use into the exception  handling like the sqlException
 		
+@Repository 
+public class MyRepository { 
+public void saveData() { 
+System.out.println("Data saved"); 
+} 
+} 
 
 
 
