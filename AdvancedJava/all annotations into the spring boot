@@ -33,5 +33,38 @@ this.e1.fun();
 
 
 
+2 @controller:-  marks a java class as a Spring mvc Controller 
+		it use for the request controller  into the mvc 
+
+
+
+@Controller 
+public class MyController { 
+@RequestMapping("/hello") 
+public String hello() { 
+return "hello"; 
+} 
+} 
+
+
+3.@Service :- Marks a java class as service layer component
+		 containing business logic for the application
+
+@Service 
+public class MyService { 
+public void performService() { 
+System.out.println("Service performed"); 
+} 
+} 
+
+one is the entity class
+this class create it the repository  of this class
+and create the one class gives the @service annotation  and use that with the creating the object of the repository  object 
+
+
+		
+		
+
+
 
 
