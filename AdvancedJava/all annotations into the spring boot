@@ -1,1 +1,37 @@
-all
+core Spring annotations
+
+1. @Component:- it makes a java classs as a spring component
+            The @Components is used to mark the Java class in the Spring applications.
+          The Spring IoC container manages the component annotations and is responsible for the lifecycle of the components, such as initializing, creating, or destroying them.
+        As a result, components can represent any object in the application, including services and controllers. 
+        Also, when the Java class marked the @Component annotation, Spring Boot detected the components with the help of the classpath.
+
+ex 
+
+@Component
+public class Emp {
+
+   public void fun()
+  {
+   sop("hello");
+   }
+
+}
+
+
+main file --
+
+ @Autowired
+ private Emp e1;
+
+@Override
+public void run(String... args) throws Exception {
+			
+this.st.studying();
+this.e1.fun();
+}
+
+
+
+
+
