@@ -66,6 +66,11 @@ and create the one class gives the @service annotation  and use that with the cr
 4 @Repository:- it marks a java class as a data access object 	
 		its provided  role and purposes
 		it can use into the exception  handling like the sqlException
+The @Repository annotation is used to interact with different databases, such as NoSQL databases and relational databases.
+Also, when a Java class is marked with @Repository annotation, Spring Boot automatically creates and adds the required context.
+The class annotated with Repository is an element of the data access layer and provides an API for interacting, which allows the developer to write less code. 
+The @Repository annotation is a marker for the class that performs the role of data access object.
+Using @Repository, you can develop flexible, reusable, and modular repositories that the Spring Data framework can easily handle.
 		
 @Repository 
 public class MyRepository { 
@@ -74,6 +79,16 @@ System.out.println("Data saved");
 } 
 } 
 
+
+5. @Configuration :- 
+
+	it can indicate that a class declared  one or more @bean methods
+	The purpose of a configuration class is to indicate the application context, 
+	like service and other application components.
+	As a result, developers can create highly flexible and efficient applications that can adapt to requirement changes quickly. 
+	@Configuration annotation supports importing other classes. The Spring Boot custom annotation can separate configuration classes based on domain or functionality.
+
+	
 
 
 
