@@ -171,5 +171,98 @@ private Boolean valueBoolean;
 10. @Scope :- 
 
 	configures the scope of bean ( singleton , prototype )
+	singleton :- This is the default scope. Only one instance of the bean is created and shared across the entire application context.
+	Prototype: A new instance of the bean is created every time it is requested.
+	Request: A new instance is created for each HTTP request. This scope is applicable only in web applications.
+	Session: A new instance is created for each HTTP session. Like request scope, this is also applicable only in web applications.
+
+11. @Lazy :- 
+
+	Marks a bean to be lazily initilized 
+	bean will not be created until it is first requested, rather than being instantiated at application startup.
 	
+12.
+ @Primary: Indicates that a bean should be given preference when 
+multiple candidates are qualified. 
+
+13. @RequestMapping :- applied it both method and class also 
+		use class level :- it defines a base url for all method in the class
+		use it method level :- it specifies the exact url that the method shoud handle
+		that can contenses the all http method like get, post, put,delete 
+14. @getMapping ,PostMapping, putMapping,DeleteMapping,PatchMapping
+
+15. @RequestParam :- binds a web request  parameter  to a amthod parameter
+			public class MyRestController { 
+@GetMapping("/resource") 
+public String getResource(@RequestParam String id) { 
+return "Resource ID: " + id; 
+} 
+} 
+
+16.  @PathVariable
+The @PathVariable is used to measure dynamic parameters from the request URI and map them to method parameters in a controller. 
+The annotation helps develop RESTful web services, allowing you to manage variable parameters.
+
+@RestController 
+public class MyRestController { 
+@GetMapping("/resource/{id}") 
+public String getResource(@PathVariable String id) { 
+return "Resource ID: " + id; 
+} 
+} 
+
+17. @RequestBody: Binds the body of the web request to a method 
+parameter. 
+This is particularly useful for handling JSON or XML data sent from a client, allowing for seamless deserialization into Java objects
+
+public class Employee {
+    private String name;
+    private int age;
+
+    // Getters and Setters
+    public String getName() { return name; }
+    public void setName(String name) { this.name = name; }
+    public int getAge() { return age; }
+    public void setAge(int age) { this.age = age; }
+}
+
+
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+@RestController
+@RequestMapping("/api/employees")
+public class EmployeeController {
+
+    @PostMapping
+    public ResponseEntity<Employee> createEmployee(@RequestBody Employee employee) {
+        // Logic to save the employee
+        return ResponseEntity.status(201).body(employee); // Returning the created employee
+    }
+}
+
+
+18. @ResponseBody: Indicates that the return value of a method should be 
+used as the response body. 
+
+When a method in a controller is annotated with @ResponseBody, Spring automatically serializes the returned object into the specified format (typically JSON) and writes it to the HTTP response.
+
+if the controller class is annoted as the @RestController that time the all method is the reated as the @ResponseBody
+
+
+@RestController
+@RequestMapping("/api/students")
+public class StudentController {
+
+    @GetMapping("/{id}")
+    public ResponseEntity<Student> getStudent(@PathVariable Long id) {
+        Student student = new Student("John", "Doe", 20); // Sample student data
+        return ResponseEntity.ok(student); // Automatically serialized to JSON
+    }
+}
+
+
+
+
+
 
