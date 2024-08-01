@@ -262,6 +262,102 @@ public class StudentController {
 }
 
 
+19.  @RequestHeader: Binds a method parameter to a request header. 
+20 @CookieValue: Binds a method parameter to a cookie value. 
+21 @SessionAttribute: Binds a method parameter to a session attribute. 
+22 @ModelAttribute: Binds a method parameter or return value to a named 
+model attribute and exposes it to a web view. 
+23 @InitBinder: Identifies methods which initialize the WebDataBinder, 
+which are used for customizing request parameter binding. 
+24 @ExceptionHandler: Defines the method that handles exceptions 
+thrown by request-handling methods. 
+
+25. @SpringBootApplication: Combines @Configuration, 
+@EnableAutoConfiguration, and @ComponentScan with their default 
+attributes. 
+The @SpringBootApplication annotation is a prominent class of multiple annotations that combines three other Spring Boot annotations, such as @ComponentScan, @Configuration, and @EnableAutoConfiguration. 
+It is placed in the root package and a meta-annotation of the application.
+Using the @SpringBootApplication annotation, developers can configure the application and take benefit of the various features provided by the Spring Boot framework.
+Also, by integrating multiple annotations’ functionality, you can reduce the boilerplate code required to configure applications.
+
+@SpringBootApplication
+public class DemoApplication implements CommandLineRunner {
+
+	
+	 @Autowired
+	 private Student st;
+	
+		
+		public static void main(String[] args) {
+		SpringApplication.run(DemoApplication.class, args);
+		System.out.println("hello");
+		     
+		}	
+		
+		@Override
+		public void run(String... args) throws Exception {
+			// TODO Auto-g
+			this.st.studying();
+		}
+
+}
+
+
+ 26 @EnableAutoConfiguration: Enables Spring Boot’s auto-configuration 
+mechanism. 
+
+27. @ComponentScan: Configures component scanning directives for use 
+with @Configuration classes. 
+
+@RestController: Combines @Controller and @ResponseBody, 
+simplifying the creation of RESTful web services. 
+
+
+8. @RequestScope: A specialized version of @Scope for a single HTTP 
+request lifecycle. 
+9. @SessionScope: A specialized version of @Scope for a HTTP session 
+lifecycle. 
+10. @ApplicationScope: A specialized version of @Scope for a web 
+application lifecycle. 
+Transaction Management Annotations 
+1. @Transactional: Indicates that a method or class should be executed 
+within a transactional context. 
+2. @EnableTransactionManagement: Enables Spring’s annotation-driven 
+transaction management capability. 
+Aspect-Oriented Programming (AOP) Annotations 
+1. @Aspect: Marks a class as an aspect. 
+2. @Before: Declares a before advice. 
+3. @After: Declares an after advice. 
+4. @AfterReturning: Declares a returning advice. 
+5. @AfterThrowing: Declares a throwing advice. 
+6. @Around: Declares an around advice. 
+7. @Pointcut: Declares a reusable pointcut expression. 
+Scheduling Annotations 
+1. @EnableScheduling: Enables Spring’s scheduled task execution 
+capability. 
+2. @Scheduled: Used for configuring scheduled tasks. 
+3. @Async: Marks a method or type as asynchronous. 
+4. @EnableAsync: Enables Spring’s asynchronous method execution 
+capability. 
+Caching Annotations 
+1. @EnableCaching: Enables Spring’s annotation-driven cache 
+management capability. 
+2. @Cacheable: Indicates that the result of invoking a method (or all 
+methods in a class) can be cached. 
+3. @CachePut: Updates the cache with the result of a method. 
+4. @CacheEvict: Indicates that a cache entry should be removed. 
+5. @Caching: Allows multiple cache annotations to be used on a single 
+method. 
+Spring Security Annotations 
+1. @EnableWebSecurity: Enables Spring Security’s web security support. 
+2. @Secured: Specifies a list of security configuration attributes for method 
+authorization. 
+3. @PreAuthorize: Allows method calls based on the evaluation of an 
+expression. 
+4. @PostAuthorize: Allows method calls based on the evaluation of an 
+expression after the method has been invoked. 
+5. @RolesAllowed: Specifies a list of roles allowed to access a method. 
+
 
 
 
