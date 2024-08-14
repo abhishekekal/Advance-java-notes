@@ -310,7 +310,72 @@ mechanism.
 with @Configuration classes. 
 
 @RestController: Combines @Controller and @ResponseBody, 
-simplifying the creation of RESTful web services. 
+simplifying the creation of RESTful web services.
+
+
+
+
+### `@Controller`
+- **Usage**: Typically used in web applications where views are rendered using a templating engine like Thymeleaf, JSP, or FreeMarker.
+- **Return Type**: The methods in a `@Controller` typically return a `String` representing the name of a view, or a `ModelAndView` object.
+- **View Resolution**: The view name returned by the controller is resolved by a `ViewResolver` (like Thymeleaf or JSP) to render HTML content.
+- **Annotations**: 
+  - You often pair `@Controller` methods with `@ResponseBody` to send data (e.g., JSON) directly in HTTP responses.
+  - If you want to return JSON or XML from a `@Controller`, you'd use `@ResponseBody` on each method or on the class itself.
+
+
+
+package com.example.demo.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+
+import java.util.Arrays;
+import java.util.List;
+
+@Controller
+public class ProductController {
+
+    @GetMapping("/products")
+    public String getProducts(Model model) {
+        // Simulating a list of products
+        List<String> products = Arrays.asList("Laptop", "Smartphone", "Tablet");
+
+        // Adding the list of products to the model
+        model.addAttribute("products", products);
+
+        // Returning the view name to be resolved (e.g., products.html)
+        return "products";
+    }
+}
+
+
+
+### `@RestController`
+- **Usage**: Used in RESTful web services where the controller methods return data directly as JSON or XML rather than rendering a view.
+- **Return Type**: The methods in a `@RestController` return objects, and these objects are serialized to JSON or XML and written directly into the HTTP response body.
+- **Automatic `@ResponseBody`**: `@RestController` is a convenience annotation that combines `@Controller` and `@ResponseBody`. Every method in a `@RestController` returns data directly, without the need for explicitly annotating each method with `@ResponseBody`.
+- **Annotations**: No need to use `@ResponseBody` since it's implied for every method.
+
+package com.example.demo.controller;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import java.util.Arrays;
+import java.util.List;
+
+@RestController
+public class ProductRestController {
+
+    @GetMapping("/api/products")
+    public List<String> getProducts() {
+        // Simulating a list of products
+        return Arrays.asList("Laptop", "Smartphone", "Tablet");
+    }
+}
+
 
 
 8. @RequestScope: A specialized version of @Scope for a single HTTP 
