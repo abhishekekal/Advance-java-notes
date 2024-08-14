@@ -19,6 +19,7 @@ Request disppachter object we can obtained from HttpServletRequest
 
 The RequestDispatcher interface provides the facility of dispatching the request to another resource it may be html, servlet or jsp.
 This interface can also be used to include the content of another resource also. It is one of the way of servlet collaboration.
+The RequestDispatcher is an Interface that comes under package javax.servlet. Using this interface we get an object in servlet after receiving the request.
 
 It is Interface 
 
