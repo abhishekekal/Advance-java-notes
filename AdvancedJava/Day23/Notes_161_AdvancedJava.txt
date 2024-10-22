@@ -60,6 +60,82 @@ IOC Container Has 2 types
 	- we can use some implementated classess using this interface
 	- Application Context is nothing but spring container.In newer version of spring Application Context to developed enterprise application.
 	- class is used ClassPathXMLApplicationContext.
+
+
+1. Instantiation of Beans
+BeanFactory:
+Lazy initialization by default, meaning beans are created only when they are explicitly requested.
+Useful for scenarios where memory optimization is crucial.
+ApplicationContext:
+Eager initialization by default, meaning beans are instantiated when the container is started.
+Provides faster response time for service requests, as beans are already available.
+2. Advanced Features
+BeanFactory:
+Provides basic DI (Dependency Injection) features but lacks advanced capabilities like event propagation and AOP.
+ApplicationContext:
+Supports advanced features like:
+Event handling (publishing and subscribing to application events),
+AOP (Aspect-Oriented Programming),
+Internationalization (i18n),
+Annotation-based configuration (like @Component, @Autowired).
+3. Event Handling
+BeanFactory:
+Does not support event propagation.
+ApplicationContext:
+Can publish and listen to events like ContextRefreshedEvent, ContextClosedEvent, etc.
+4. AOP Support
+BeanFactory:
+Does not provide built-in support for AOP (Aspect-Oriented Programming).
+ApplicationContext:
+Fully supports AOP features, allowing for aspects like transactions, logging, and security to be integrated seamlessly.
+5. Internationalization
+BeanFactory:
+Does not support internationalization.
+ApplicationContext:
+Supports internationalization features (i18n) using resource bundles for locale-specific messages.
+6. Annotation Support
+BeanFactory:
+Limited support for annotations. Not typically used with annotation-based configuration.
+ApplicationContext:
+Full support for annotations like @Autowired, @Component, @Value, etc.
+7. Configuration
+BeanFactory:
+Typically configured using XML.
+ApplicationContext:
+Can be configured using XML, annotations, or Java-based configuration (@Configuration).
+8. Usage Context
+BeanFactory:
+More suitable for lightweight, simple applications or resource-constrained environments where lazy loading is essential.
+ApplicationContext:
+Preferred for enterprise-level applications requiring advanced features.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 	
 summary & Interview Questions
 1 What is Spring ?
