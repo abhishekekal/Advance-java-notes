@@ -21,7 +21,7 @@ Last Lecture Agenda
 			  
 			  int status=stmt.executeUpdate("insert into employee values(...)");
 			  
-			  .....
+		
 			  
 			  ResultSet rst= stmt.executeQuery("")
 			  
